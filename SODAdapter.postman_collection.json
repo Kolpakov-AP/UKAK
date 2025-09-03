@@ -1,0 +1,133 @@
+{
+	"info": {
+		"_postman_id": "f711d58d-c027-4359-a6ec-d7c1666b9f8c",
+		"name": "SODAdapter",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "28286397"
+	},
+	"item": [
+		{
+			"name": "GenerateEvent",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\"00824f76-b50b-4102-974d-5e65c705b1a1\"]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://csp-sod-adapter-service.csp.dev.rshbdev.ru/api/v1/events/generate"
+			},
+			"response": []
+		},
+		{
+			"name": "Search",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"url": "http://localhost:11777/api/v1/search"
+			},
+			"response": []
+		},
+		{
+			"name": "ПоискCustomerLe",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://csp-sod-adapter-service.csp.dev.rshbdev.ru/api/v1/customers-np/00824f76-b50b-4102-974d-5e65c705b1a1"
+			},
+			"response": []
+		},
+		{
+			"name": "ПоискСделки",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:11777/api/v1/products/c12612e2-4d59-441b-b794-aa1a8ca01b73"
+			},
+			"response": []
+		},
+		{
+			"name": "ГенерацияСобытийПоПереданнымObjectId",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\"c12612e2-4d59-441b-b794-aa1a8ca01b73\"]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:11777/api/v1/events/generate"
+			},
+			"response": []
+		},
+		{
+			"name": "FindByIds",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\"00018acb-6477-4c37-a132-c8d12069fae2\", \"ef9758b9-e137-4c79-9946-61a378c61920\"]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "https://csp-sod-adapter-service.csp.dev.rshbdev.ru/api/v1/products/find-by-ids"
+			},
+			"response": []
+		},
+		{
+			"name": "ПоискСправочников",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:11777/api/v1/dictionary/RegionalBranchesMdl"
+			},
+			"response": []
+		},
+		{
+			"name": "https://csp-sod-adapter-service.csp.dev.rshbdev.ru/api/v1/customers-np/00018acb-6477-4c37-a132-c8d12069fae2",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "https://csp-sod-adapter-service.csp.dev.rshbdev.ru/api/v1/customers-np/00018acb-6477-4c37-a132-c8d12069fae2"
+			},
+			"response": []
+		},
+		{
+			"name": "FindByIdsDevСтенд",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\"01f63a49-6350-4457-baf0-25aa6181c5a9\"]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "https://csp-sod-adapter-service.csp.dev.rshbdev.ru/api/v1/clients/search/byIds"
+			},
+			"response": []
+		}
+	]
+}
