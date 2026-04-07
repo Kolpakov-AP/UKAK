@@ -1,0 +1,6 @@
+SELECT o.id, o.order_barcode, o.object_barcode, o.pick_date, o.modify_date, o.modify_by, d.archive_box_barcode, d.file_box_barcode FROM order_db.order_content AS o
+left join paper_db.dossier as d on o.object_barcode = d.barcode
+where o.status = 'SELECTION' and o.type = 'DOSSIER' and o.object_barcode in (
+select d.barcode from paper_db.dossier as d
+where d.archive_box_barcode is not null or d.file_box_barcode is not null
+)
