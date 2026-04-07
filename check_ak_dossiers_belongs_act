@@ -1,0 +1,14 @@
+select
+d.barcode,
+d.archive_box_barcode,
+al.act_barcode
+from paper_db.dossier d left join act_db.act_link al on d.barcode = al.object_barcode
+where d.barcode in (
+select dh.barcode from paper_db.dossier_history dh
+where dh.barcode_ak in ('AK/00111-0000265', 'AK/00111-0000275', 'AK/00111-0000285')
+and (
+dh.source_of_change like '%переукомплектованo в АК'or
+dh.source_of_change like '%переукомплектован в АК'
+)
+and dh.event_type = 'AK_PACKING_PLUS'
+)
