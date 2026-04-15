@@ -1,0 +1,16 @@
+select
+d.barcode,
+d.status,
+d.archive,
+d.archive_box_barcode,
+d.file_box_barcode,
+al.act_barcode,
+tlrd.request_id,
+tl.task_id,
+ol.order_barcode
+from paper_db.dossier d
+left join act_db.act_link al on d.barcode = al.object_barcode
+left join request_db.temp_link_request_deal tlrd on d.csp_deal_id = tlrd.csp_deal_id
+left join task_db.task_link tl on d.barcode = tl.dossier_barcode
+left join order_db.order_link ol on d.barcode = ol.entity_barcode
+where d.barcode = 'ШК_ДОСЫЛА'
