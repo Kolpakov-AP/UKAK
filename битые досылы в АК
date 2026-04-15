@@ -1,0 +1,6 @@
+select d.barcode, d.status, d.archive_box_barcode, d.file_box_barcode, al.act_barcode, a.status
+from paper_db.dossier d
+left join act_db.act_link al on d.barcode = al.object_barcode
+left join act_db.act a on al.act_barcode = a.barcode
+where d.archive_box_barcode in ('ШК_АК')
+order by d.archive_box_barcode
